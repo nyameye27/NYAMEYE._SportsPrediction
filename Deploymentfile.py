@@ -22,6 +22,11 @@ def main():
     age=st.number_input('Age in Years')
     potential = st.number_input('Player Potential out of 100', 1, 100, 1)
     defending = st.number_input('Defending out of 100',1, 100, 1)
+    defending_standing_tackle=st.number_input('Defending standing tackle out of 100',1,100,1)
+    mentality_interceptions=st.number_input('Mentatility of Player out of 100', 1, 100,)
+    defending_sliding_tackle=st.number_input('Defending sliding tackle out of 100',1,100,1) 
+    movement_reactions=st.number_input('Movement reactions out of 100',1,100,1)
+    attacking_finishing=st.number_input('Attacking finish out of 100',1,100,1)
 
    
     
@@ -33,8 +38,12 @@ def main():
             'value_eur': [value_eur],
             'age':[age],
             'potential': [potential],
-            'defending':[defending]
-            
+            'defending':[defending],
+            'defending_standing_tackle':[defending_standing_tackle], 
+            'mentality_interceptions':[mentality_interceptions],
+            'defending_sliding_tackle':[defending_sliding_tackle], 
+            'movement_reactions':[movement_reactions], 
+            'attacking_finishing':[attacking_finishing]
         }
 
         # Making into a DataFrame
@@ -42,7 +51,8 @@ def main():
 
         # Ensure the DataFrame has the same columns as the model expects
         expected_features = [
-            'wage_eur', 'value_eur','age', 'potential','defending'
+            'wage_eur', 'value_eur','age', 'potential','defending','defending_standing_tackle', 'mentality_interceptions','defending_sliding_tackle', 'movement_reactions', 
+            'attacking_finishing'
         ]
         
         for feature in expected_features:
