@@ -1,0 +1,5 @@
+numpy
+pandas
+scikit-learn
+huggingface_hub
+xgboost
