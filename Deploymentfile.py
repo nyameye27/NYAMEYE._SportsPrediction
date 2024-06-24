@@ -19,8 +19,10 @@ def main():
 
     wage_eur = st.number_input('Player Wage in Euros')
     value_eur = st.number_input('Player Value in Euros')
+    age=st.number_input('Age in Years')
     potential = st.number_input('Player Potential out of 100', 1, 100, 1)
-    #defending = st.number_input('Passing out of 100',1, 100, 1)
+    defending = st.number_input('Defending out of 100',1, 100, 1)
+
    
     
     
@@ -29,7 +31,9 @@ def main():
         data = {
             'wage_eur': [wage_eur],
             'value_eur': [value_eur],
+            'age':[age],
             'potential': [potential],
+            'defending':[defending]
             
         }
 
@@ -38,7 +42,7 @@ def main():
 
         # Ensure the DataFrame has the same columns as the model expects
         expected_features = [
-            'wage_eur', 'value_eur', 'potential'
+            'wage_eur', 'value_eur','age', 'potential','defending'
         ]
         
         for feature in expected_features:
